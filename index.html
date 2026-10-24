@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d1c">
+  <meta name="description" content="A playful multilingual Halloween surprise.">
+  <title>Halloween Night — A little surprise</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell" id="site-shell">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand" aria-label="Halloween Night">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <span>HALLOWEEN<span class="brand-light">/NIGHT</span></span>
+      </div>
+      <div class="language-control">
+        <label for="language-select" data-i18n="langLabel">Language</label>
+        <div class="select-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.4 4 6.4 4 9s-1 5.6-4 9c-3-3.4-4-6.4-4-9s1-5.6 4-9Z"/></svg>
+          <select id="language-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="th">ไทย</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh">简体中文</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="ar">العربية</option>
+          </select>
+          <span class="down-chevron" aria-hidden="true"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero" id="landing">
+      <section class="hero-copy" aria-labelledby="hero-title">
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">THE SPOOKIEST NIGHT OF THE YEAR</span></div>
+        <h1 id="hero-title"><span data-i18n="headlineTop">A little magic.</span><span class="h1-gradient" data-i18n="headlineGlow">A little mischief.</span></h1>
+        <p class="hero-description" data-i18n="description">The moon is out, the ghosts are awake, and there's a tiny Halloween surprise waiting just for you.</p>
+        <div class="night-detail" aria-hidden="true"><span class="detail-line"></span><span>✦</span><span>✧</span><span>✦</span></div>
+      </section>
+
+      <section class="choice-card" aria-labelledby="invite-question">
+        <div class="card-decorations" aria-hidden="true">
+          <span class="orbit orbit-a"></span><span class="orbit orbit-b"></span>
+          <svg class="ghost" viewBox="0 0 176 168" fill="none" aria-hidden="true">
+            <path d="M28 89C28 50 54 21 89 21c34 0 60 29 60 68v48c0 7-8 11-14 7l-12-9-16 11c-5 4-10 4-15 0l-13-10-14 10c-5 4-11 4-16 0l-12-10-10 8c-6 5-14 0-14-8V89Z" fill="#F5EDF9"/>
+            <path d="M28 89C28 50 54 21 89 21c34 0 60 29 60 68v48c0 7-8 11-14 7l-12-9-16 11c-5 4-10 4-15 0l-13-10-14 10c-5 4-11 4-16 0l-12-10-10 8c-6 5-14 0-14-8V89Z" stroke="#AFA2D9" stroke-width="3"/>
+            <ellipse cx="69" cy="83" rx="7" ry="10" fill="#272139"/><ellipse cx="109" cy="83" rx="7" ry="10" fill="#272139"/>
+            <ellipse cx="88" cy="103" rx="5" ry="7" fill="#272139"/><ellipse cx="51" cy="101" rx="10" ry="5" fill="#FFC3CB" opacity=".55"/><ellipse cx="126" cy="101" rx="10" ry="5" fill="#FFC3CB" opacity=".55"/>
+            <path d="m23 16 4 9 9 4-9 4-4 9-4-9-9-4 9-4 4-9ZM156 6l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" fill="#FFBB7C"/>
+          </svg>
+          <span class="tiny-sparkle tiny-sparkle-left">✦</span><span class="tiny-sparkle tiny-sparkle-right">✧</span>
+        </div>
+        <div class="card-main">
+          <p class="card-kicker" data-i18n="cardEyebrow">YOU'VE BEEN INVITED</p>
+          <h2 id="invite-question" data-i18n="question">Will you celebrate Halloween with me?</h2>
+          <p class="card-subtitle" data-i18n="hint">Choose wisely... the night is listening.</p>
+          <div class="actions">
+            <button type="button" class="action action-primary" id="accept-button"><span aria-hidden="true">🎃</span><span data-i18n="yes">Absolutely!</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <button type="button" class="action action-secondary" id="decline-button"><span aria-hidden="true">🕸</span><span data-i18n="no">Not tonight</span></button>
+          </div>
+          <p class="card-footnote" data-i18n="soundNotice">A surprise video with sound may play after you choose.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>© 2026 HALLOWEEN NIGHT</span><span data-i18n="footerNote">Made for a little Halloween fun ✦</span></footer>
+  </div>
+
+  <section class="video-stage" id="scare" hidden aria-hidden="true" aria-label="Halloween video">
+    <video id="video" src="assets/scare.mp4" preload="metadata" playsinline loop></video>
+    <div class="video-shade" aria-hidden="true"></div>
+    <div class="video-toolbar">
+      <button class="video-control" type="button" id="back-button"><span aria-hidden="true">←</span> <span data-i18n="back">Back</span></button>
+      <div class="video-actions">
+        <button class="video-control" type="button" id="replay-button"><span aria-hidden="true">↻</span> <span data-i18n="replay">Replay</span></button>
+        <button class="video-control" type="button" id="sound-button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">♪</span> <span id="sound-button-text" data-i18n="mute">Mute</span></button>
+      </div>
+    </div>
+    <div class="video-error" id="video-error" hidden role="alert">
+      <h2 data-i18n="errorTitle">Oops, the surprise didn't load.</h2>
+      <p data-i18n="errorDescription">Check that assets/scare.mp4 is in the project folder.</p>
+      <button class="action action-primary" id="error-back-button" type="button" data-i18n="back">Back</button>
+    </div>
+  </section>
+</body>
+</html>
